@@ -9,8 +9,9 @@ import styleD from '../DeskCards/DeskCards.module.css'
 import {Button} from '@mui/material';
 import {cardParams} from './paramsCardsReducer/selectors';
 import {authState} from '../auth/selectors';
-import {AddNewCard} from "./EditCardsComponents/AddNewCard";
-import {CardsTable} from "./CardsTable/CardsTable";
+import {CardsTable} from './CardsTable/CardsTable';
+import {createCardTC} from './cardsReducer/cardsReducer';
+import {AddUpdateCard, OnSavePayloadType} from './EditCardsComponents/AddUpdateCard';
 
 export const Cards = () => {
     const dispatch = useAppDispatch();
@@ -38,6 +39,10 @@ export const Cards = () => {
             '/learn',
             {state: {packName, packId: id}}
         );
+    };
+
+    const onSave = (payload: OnSavePayloadType) => {
+        dispatch(createCardTC({...payload}))
     };
 
     if (!isLogin) {
@@ -99,7 +104,12 @@ export const Cards = () => {
                     </div>
 
                     <div>
-                        <AddNewCard packID={id}/>
+                        {/*<AddNewCard packID={id}/>*/}
+                        <AddUpdateCard
+                            packId={id}
+                            buttonName={'Add card'}
+                            onSave={onSave}
+                        />
                     </div>
                 </div>
 

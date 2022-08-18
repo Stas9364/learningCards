@@ -6,13 +6,13 @@ import TableCell from '@mui/material/TableCell';
 import {Rating} from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import {useAppDispatch, useAppSelector} from "../../../common/utils/hooks";
-import {authState} from "../../auth/selectors";
-import {deleteCardTC} from "../cardsReducer/cardsReducer";
-import {DeletePackCardComponent} from "../../../common/components/DeletePackCardComponent/DeletePackCardComponent";
+import {useAppDispatch, useAppSelector} from '../../../common/utils/hooks';
+import {authState} from '../../auth/selectors';
+import {deleteCardTC, updateCardTC} from '../cardsReducer/cardsReducer';
+import {DeletePackCardComponent} from '../../../common/components/DeletePackCardComponent/DeletePackCardComponent';
 import {updatedDate} from '../../../common/utils/dateFormatting';
-import {UpdateCard} from '../EditCardsComponents/UpdateCard';
 import {allCards} from '../cardsReducer/selectors';
+import {AddUpdateCard, OnSavePayloadType} from '../EditCardsComponents/AddUpdateCard';
 
 type CardsTableBodyPropsType = {
     packID: string | undefined
@@ -23,6 +23,10 @@ export const CardsTableBody: React.FC<CardsTableBodyPropsType> = ({packID}) => {
 
     const cards = useAppSelector(allCards.cards);
     const userId = useAppSelector(authState.id);
+
+    const onSave = (payload: OnSavePayloadType) => {
+        dispatch(updateCardTC({...payload}));
+    };
 
     return (
         <>
@@ -60,11 +64,20 @@ export const CardsTableBody: React.FC<CardsTableBodyPropsType> = ({packID}) => {
                                             thunk={() => dispatch(deleteCardTC(card._id, packID))}
                                         />
 
-                                        <UpdateCard
+                                        {/*<UpdateCard*/}
+                                        {/*    packId={packID}*/}
+                                        {/*    cardId={card._id}*/}
+                                        {/*    question={card.question}*/}
+                                        {/*    answer={card.answer}*/}
+                                        {/*/>*/}
+
+                                        <AddUpdateCard
+                                            buttonName={'Update card'}
+                                            onSave={onSave}
                                             packId={packID}
                                             cardId={card._id}
-                                            question={card.question}
                                             answer={card.answer}
+                                            question={card.question}
                                         />
 
                                     </ButtonGroup>
