@@ -6,13 +6,13 @@ import TableCell from '@mui/material/TableCell';
 import {Rating} from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import {useAppDispatch, useAppSelector} from "../../common/utils/hooks";
-import {authState} from "../auth/selectors";
-import {deleteCardTC} from "./cardsReducer/cardsReducer";
-import {DeletePack} from "../DeskCards/DeskComponents/EditPacksComponents/DeletePack/DeletePack";
-import {updatedDate} from '../../common/utils/dateFormatting';
-import {UpdateCard} from './EditCardsComponents/UpdateCard';
-import {allCards} from './cardsReducer/selectors';
+import {useAppDispatch, useAppSelector} from "../../../common/utils/hooks";
+import {authState} from "../../auth/selectors";
+import {deleteCardTC} from "../cardsReducer/cardsReducer";
+import {DeletePackCardComponent} from "../../../common/components/DeletePackCardComponent/DeletePackCardComponent";
+import {updatedDate} from '../../../common/utils/dateFormatting';
+import {UpdateCard} from '../EditCardsComponents/UpdateCard';
+import {allCards} from '../cardsReducer/selectors';
 
 type CardsTableBodyPropsType = {
     packID: string | undefined
@@ -54,7 +54,7 @@ export const CardsTableBody: React.FC<CardsTableBodyPropsType> = ({packID}) => {
 
                                 {userId === card.user_id
                                     ? <ButtonGroup>
-                                        <DeletePack
+                                        <DeletePackCardComponent
                                             name={card.question}
                                             modalName={'Card'}
                                             thunk={() => dispatch(deleteCardTC(card._id, packID))}

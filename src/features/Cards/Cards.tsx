@@ -10,7 +10,7 @@ import {Button} from '@mui/material';
 import {cardParams} from './paramsCardsReducer/selectors';
 import {authState} from '../auth/selectors';
 import {AddNewCard} from "./EditCardsComponents/AddNewCard";
-import {CardsTable} from "./CardsTable";
+import {CardsTable} from "./CardsTable/CardsTable";
 
 export const Cards = () => {
     const dispatch = useAppDispatch();

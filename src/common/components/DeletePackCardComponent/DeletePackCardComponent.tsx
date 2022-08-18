@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Button} from '@mui/material';
-import {CustomModal} from '../../../../../common/components/CustomModal/CustomModal';
-import del from '../../../../../assets/img/delete.svg';
-import style from '../EditPacksComponents.module.css';
+import del from '../../../assets/img/delete.svg';
+import style from '../../../features/DeskCards/DeskComponents/EditPacksComponents/EditPacksComponents.module.css';
+import {CustomModal} from '../CustomModal/CustomModal';
 
 type DeletePackPropsType = {
     name: string
@@ -10,7 +10,7 @@ type DeletePackPropsType = {
     thunk: any
 }
 
-export const DeletePack: React.FC<DeletePackPropsType> = ({name, modalName, thunk}) => {
+export const DeletePackCardComponent: React.FC<DeletePackPropsType> = ({name, modalName, thunk}) => {
 
     const [open, setOpen] = useState(false);
 
@@ -47,12 +47,7 @@ export const DeletePack: React.FC<DeletePackPropsType> = ({name, modalName, thun
 
                 <div className={style.modalButtons}>
                     <Button variant={'outlined'} onClick={onCloseModal}>Cancel</Button>
-                    <Button
-                        sx={{backgroundColor: 'red'}}
-                        variant={'contained'}
-                        onClick={onDeleteHandler}
-                    >Delete
-                    </Button>
+                    <Button onClick={onDeleteHandler}>Delete</Button>
                 </div>
 
             </CustomModal>

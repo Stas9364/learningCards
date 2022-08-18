@@ -8,18 +8,25 @@ import TableCell from '@mui/material/TableCell';
 import {PATH} from '../../../../common/components/routes/RoutesComponent';
 import {updatedDate} from '../../../../common/utils/dateFormatting';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import {DeletePack} from '../EditPacksComponents/DeletePack/DeletePack';
-import {UpdatePack} from '../EditPacksComponents/UpdatePack/UpdatePack';
+import {DeletePackCardComponent} from '../../../../common/components/DeletePackCardComponent/DeletePackCardComponent';
 import {Button} from '@mui/material';
 import study from '../../../../assets/img/school.svg';
 import * as React from 'react';
-import {deletePackTC} from '../../packsReducer/packsReducer';
+import {deletePackTC, updatePackTC} from '../../packsReducer/packsReducer';
 import {allPacks} from '../../packsReducer/selectors';
 import style from '../../DeskComponents/BasicTable/BasicTable.module.css'
+import {
+    AddUpdatePackComponent,
+    OnSaveArgsType
+} from '../EditPacksComponents/AddUpdatePackComponent';
 
 export const BasicTableBody = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+
+    const onSave = (args: OnSaveArgsType) => {
+        dispatch(updatePackTC({...args}));
+    }
 
     const packs = useAppSelector(allPacks.cardPacks);
     const userId = useAppSelector(authState.id);
@@ -49,7 +56,8 @@ export const BasicTableBody = () => {
                                 align="center"
                                 width='326px'
                             >
-                                {(pack.deckCover && <img src={pack.deckCover} alt={'cover'} className={style.deckCover}/>)
+                                {(pack.deckCover &&
+                                        <img src={pack.deckCover} alt={'cover'} className={style.deckCover}/>)
                                     || <span className={style.textPackName}>{pack.name}</span>}
                             </TableCell>
                             <TableCell sx={{borderBottom: '1px solid #1c72b9'}} width='326px'
@@ -61,17 +69,19 @@ export const BasicTableBody = () => {
                             <TableCell sx={{borderBottom: '1px solid #1c72b9'}} width='326px' align="center">
                                 {userId === pack.user_id
                                     ? <ButtonGroup>
-                                        <DeletePack
+                                        <DeletePackCardComponent
                                             name={pack.name}
                                             modalName={'Pack'}
                                             thunk={() => dispatch(deletePackTC(pack._id))}
                                         />
 
-                                        <UpdatePack
+                                        <AddUpdatePackComponent
+                                            onSave={onSave}
+                                            buttonName={'Update pack'}
+                                            packCover={pack.deckCover}
                                             packId={pack._id}
                                             packName={pack.name}
                                             isPackPrivate={pack.private}
-                                            packCover={pack.deckCover}
                                         />
 
                                         <Button onClick={() => studyHandler(pack.name, pack._id)}>

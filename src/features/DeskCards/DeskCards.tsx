@@ -7,9 +7,13 @@ import {useAppDispatch, useAppSelector} from '../../common/utils/hooks';
 import {Navigate} from 'react-router-dom';
 import {authState} from '../auth/selectors';
 import {SearchInput} from '../../common/components/SearchInput/SearchInput';
-import {AddNewPack} from './DeskComponents/EditPacksComponents/AddNewPack/AddNewPack';
 import {setParamsAC, setParamsTC} from "./paramsReducer/paramsReducer";
 import {params} from "./paramsReducer/selectors";
+import {createPackTC} from "./packsReducer/packsReducer";
+import {
+    AddUpdatePackComponent,
+    OnSaveArgsType
+} from './DeskComponents/EditPacksComponents/AddUpdatePackComponent';
 
 export const DeskCards = React.memo(() => {
     const dispatch = useAppDispatch();
@@ -27,6 +31,10 @@ export const DeskCards = React.memo(() => {
         dispatch(setParamsTC());
     }, [dispatch, max, min, page, pageCount, packName, user_id, sortPacks]);
 
+    const onSave = (args: OnSaveArgsType) => {
+        dispatch(createPackTC({...args}));
+    }
+
     if (!isLogin) {
         return <Navigate to='/'/>;
     }
@@ -36,7 +44,10 @@ export const DeskCards = React.memo(() => {
             <div className={style.nameAndButton}>
                 <div><h1>Packs list</h1></div>
                 <div>
-                    <AddNewPack/>
+                    <AddUpdatePackComponent
+                        buttonName={'Add new pack'}
+                        onSave={onSave}
+                    />
                 </div>
             </div>
 
