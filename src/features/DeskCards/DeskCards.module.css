@@ -1,0 +1,41 @@
+.container{
+    width: 80%;
+    margin:3% auto;
+}
+.nameAndButton,.search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inputContainer{
+    width:35%;
+}
+.search{
+    margin-bottom: 3%;
+}
+.sliderValue{
+    display: flex;
+}
+.min,.max{
+    /*border: 1px solid rgba(100,100,100,50%);*/
+    height: 35px;
+    width: 40px;
+    text-align: center;
+    align-self: center;
+    font-size: 20px;
+}
+.min{
+    margin-right: 20px;
+}
+.max{
+    margin-left: 20px;
+}
+.click{
+  color: yellow;
+}
+/*!*.click:active{*!*/
+/*!*    background-color: #366cfa;*!*/
+/*!*}*!*/
+/*.click:checked{*/
+/*    background-color: #366cfa;*/
+/*}*/

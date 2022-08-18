@@ -1,0 +1,42 @@
+.registration {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f9f9fa;
+}
+
+.registrationPaper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 413px;
+    height: 528px;
+    margin-top: 4%;
+}
+
+.registrationPaperContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+}
+
+.registerH1 {
+    display: flex;
+    margin-top: 35px;
+    font-size: 26px;
+}
+
+.registerFooter {
+    color: gray;
+    margin-top: 31px;
+}
+.registerImg{
+    width: 150px;
+    height: 150px;
+}
+.registerName{
+    font-weight: 400;
+    opacity: 0.5;
+}
