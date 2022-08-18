@@ -4,8 +4,8 @@ import {
     GetCardsResponseType,
     RequestPayloadCardType
 } from '../../../api/cardsDeskAPI';
-import {setCardsParamsTC} from "../paramsCardsReducer/paramsCardsReducer";
-import {handlerError} from "../../../common/utils/handlerError";
+import {setCardsParamsTC} from '../paramsCardsReducer/paramsCardsReducer';
+import {handlerError} from '../../../common/utils/handlerError';
 
 export enum CARD_TYPE {
     GET_CARDS = 'GET_CARDS',
@@ -53,10 +53,10 @@ export const createCardTC = (card: RequestPayloadCardType): AppThunk => async (d
     }
 };
 
-export const updateCardTC = (card: RequestPayloadCardType, cardsPack_id: string | undefined): AppThunk => async (dispatch) => {
+export const updateCardTC = (card: RequestPayloadCardType): AppThunk => async (dispatch) => {
     try {
         await cardsAPI.updateCard(card);
-    dispatch(setCardsParamsTC(cardsPack_id));
+    dispatch(setCardsParamsTC(card.cardsPack_id));
     } catch (e) {
         handlerError(e, dispatch);
     }

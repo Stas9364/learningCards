@@ -1,10 +1,10 @@
-import React, {ChangeEvent, useState} from "react";
-import {uploadHandler} from "../../../../common/utils/uploadHandler";
-import {Button, Checkbox, FormControlLabel, TextField} from "@mui/material";
-import edit from "../../../../assets/img/edit.svg";
-import {CustomModal} from "../../../../common/components/CustomModal/CustomModal";
-import style from "./EditPacksComponents.module.css";
-import {DownloadingCoverBlock} from "../../../../common/components/DownloadingCoverBlock/DownloadingCoverBlock";
+import React, {ChangeEvent, useState} from 'react';
+import {uploadHandler} from '../../../../common/utils/uploadHandler';
+import {Button, Checkbox, FormControlLabel, TextField} from '@mui/material';
+import edit from '../../../../assets/img/edit.svg';
+import {CustomModal} from '../../../../common/components/CustomModal/CustomModal';
+import style from './EditPacksComponents.module.css';
+import {DownloadingCoverBlock} from '../../../../common/components/DownloadingCoverBlock/DownloadingCoverBlock';
 
 type AddUpdatePackComponentPropsType = {
     packId?: string
