@@ -1,12 +1,12 @@
 import * as React from 'react';
+import {initApp} from '../../../app/selectors';
+import {useAppSelector} from "../../../common/utils/hooks";
+import {WithoutResultPage} from '../../../common/components/WithoutResultsPage/WithoutResultPage';
+import { SecondaryPreloader } from '../../../common/components/Preloader/secondaryPreloader/SecondaryPreloader';
+import {allCards} from '../cardsReducer/selectors';
+import style from '../../DeskCards/DeskComponents/BasicTable/BasicTable.module.css'
 import {CardsTableHead} from './CardsTableHead';
 import {CardsTableBody} from './CardsTableBody';
-import {initApp} from "../../app/selectors";
-import {useAppSelector} from "../../common/utils/hooks";
-import {WithoutResultPage} from "../../common/components/WithoutResultsPage/WithoutResultPage";
-import { SecondaryPreloader } from '../../common/components/Preloader/secondaryPreloader/SecondaryPreloader';
-import {allCards} from "./cardsReducer/selectors";
-import style from '../DeskCards/DeskComponents/BasicTable/BasicTable.module.css'
 
 type CardsTablePropsType = {
   packID: string | undefined
