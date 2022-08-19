@@ -57,13 +57,18 @@ export const AddUpdatePackComponent: React.FC<AddUpdatePackComponentPropsType> =
 
     return (
         <div>
-            {buttonName === 'Add new pack'
+            {buttonName === 'Add pack'
                 ? <Button
                     onClick={openModal}
-                    style={{marginTop: '0', width: '300px'}}
+                    //style={{marginTop: '0', width: '300px'}}
                     type='submit'
                     color='primary'
                     variant='contained'
+                    sx={{
+                        width: 300,
+                        marginTop: 0,
+                        borderRadius: 5
+                    }}
                 >{buttonName}
                 </Button>
 

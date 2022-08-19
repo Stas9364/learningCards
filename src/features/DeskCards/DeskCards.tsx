@@ -45,7 +45,7 @@ export const DeskCards = React.memo(() => {
                 <div><h1>Packs list</h1></div>
                 <div>
                     <AddUpdatePackComponent
-                        buttonName={'Add new pack'}
+                        buttonName={'Add pack'}
                         onSave={onSave}
                     />
                 </div>
@@ -62,13 +62,13 @@ export const DeskCards = React.memo(() => {
                     />
                 </div>
 
-                <div>
-                    <h3>Show packs cards</h3>
+                <div style={{width: '20%'}}>
+                    <h3>Show packs</h3>
                     <UniButton/>
                 </div>
 
-                <div>
-                    <h3>Number of cards</h3>
+                <div style={{textAlign: 'center'}}>
+                    <h3>Search range</h3>
                     <RangeSlider/>
                 </div>
             </div>

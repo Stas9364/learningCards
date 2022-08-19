@@ -30,7 +30,7 @@ export const CardsTableBody: React.FC<CardsTableBodyPropsType> = ({packID}) => {
 
     return (
         <>
-            <Table sx={{minWidth: 650}} aria-label="simple table">
+            <Table aria-label="simple table">
                 <TableBody style={{backgroundColor: '#d4e3fc'}}>
                     {cards && cards.map((card) => {
                         return <TableRow
@@ -39,13 +39,20 @@ export const CardsTableBody: React.FC<CardsTableBodyPropsType> = ({packID}) => {
                         >
                             <TableCell
                                 sx={{borderBottom: '1px solid #1c72b9'}}
-                                component="th" scope="row" align="center"
-                                width='326px'>{card.question}</TableCell>
-                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}} width='326px'
-                                       align="center">{card.answer}</TableCell>
-                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}} width='326px'
-                                       align="center">{updatedDate(card.updated)}</TableCell>
-                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}} width='326px' align="center">
+                                align="center"
+                                width='20%'
+                            >{card.question}</TableCell>
+                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}}
+                                       width='20%'
+                                       align="center"
+                            >{card.answer}</TableCell>
+                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}}
+                                       width='20%'
+                                       align="center"
+                            >{updatedDate(card.updated)}</TableCell>
+                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}}
+                                       width='20%'
+                                       align="center">
                                 <Rating
                                     name="text-feedback"
                                     value={card.grade}
@@ -54,7 +61,9 @@ export const CardsTableBody: React.FC<CardsTableBodyPropsType> = ({packID}) => {
                                     emptyIcon={<StarIcon style={{opacity: 0.55}} fontSize="inherit"/>}
                                 />
                             </TableCell>
-                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}} width='326px' align="center">
+                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}}
+                                       width='20%'
+                                       align="center">
 
                                 {userId === card.user_id
                                     ? <ButtonGroup>
@@ -63,13 +72,6 @@ export const CardsTableBody: React.FC<CardsTableBodyPropsType> = ({packID}) => {
                                             modalName={'Card'}
                                             thunk={() => dispatch(deleteCardTC(card._id, packID))}
                                         />
-
-                                        {/*<UpdateCard*/}
-                                        {/*    packId={packID}*/}
-                                        {/*    cardId={card._id}*/}
-                                        {/*    question={card.question}*/}
-                                        {/*    answer={card.answer}*/}
-                                        {/*/>*/}
 
                                         <AddUpdateCard
                                             buttonName={'Update card'}

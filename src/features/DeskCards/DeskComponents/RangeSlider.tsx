@@ -52,7 +52,6 @@ export const RangeSlider = React.memo ( () => {
 
             </Box>
             <div className={style.max}>{value1[1]}</div>
-
         </div>
     );
 } );
