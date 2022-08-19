@@ -37,7 +37,7 @@ export const BasicTableBody = () => {
 
     return (
         <>
-            <Table sx={{minWidth: 650}} aria-label="simple table">
+            <Table aria-label="simple table">
                 <TableBody style={{backgroundColor: '#d4e3fc'}}>
                     {packs && packs.map((pack) => {
                         return <TableRow
@@ -48,25 +48,37 @@ export const BasicTableBody = () => {
 
                                 onClick={() => navigate(
                                     `${PATH.cards}/${pack._id}`,
-                                    {state: pack.name}
+                                    {state: {packName: pack.name, userId: pack.user_id}}
                                 )}
-                                sx={{borderBottom: '1px solid #1c72b9', maxWidth: '326px'}}
-                                component="th"
-                                scope="row"
+                                sx={{
+                                    borderBottom: '1px solid #1c72b9',
+                                }}
                                 align="center"
-                                width='326px'
+                                width='20%'
                             >
                                 {(pack.deckCover &&
                                         <img src={pack.deckCover} alt={'cover'} className={style.deckCover}/>)
                                     || <span className={style.textPackName}>{pack.name}</span>}
                             </TableCell>
-                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}} width='326px'
-                                       align="center">{pack.cardsCount}</TableCell>
-                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}} width='326px'
-                                       align="center">{updatedDate(pack.updated)}</TableCell>
-                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}} width='326px'
-                                       align="center">{pack.user_name}</TableCell>
-                            <TableCell sx={{borderBottom: '1px solid #1c72b9'}} width='326px' align="center">
+                            <TableCell
+                                sx={{borderBottom: '1px solid #1c72b9'}}
+                                width='20%'
+                                align="center"
+                            >{pack.cardsCount}</TableCell>
+                            <TableCell
+                                sx={{borderBottom: '1px solid #1c72b9'}}
+                                width='20%'
+                                align="center"
+                            >{updatedDate(pack.updated)}</TableCell>
+                            <TableCell
+                                sx={{borderBottom: '1px solid #1c72b9'}}
+                                width='20%'
+                                align="center"
+                            >{pack.user_name}</TableCell>
+                            <TableCell
+                                sx={{borderBottom: '1px solid #1c72b9'}}
+                                width='20%'
+                                align="center">
                                 {userId === pack.user_id
                                     ? <ButtonGroup>
                                         <DeletePackCardComponent

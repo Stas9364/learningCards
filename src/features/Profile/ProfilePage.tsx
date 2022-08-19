@@ -22,11 +22,6 @@ export const ProfilePage = React.memo(() => {
         dispatch(updateMeTC({name}));
     }, []);
 
-    const changeAvatar = useCallback((event: any) => {
-        //dispatch(updateMeTC(event.target.files));
-        console.log(event.target.files);
-    }, []);
-
     if (!state.isLogin) {
         return <Navigate to='/'/>
     }

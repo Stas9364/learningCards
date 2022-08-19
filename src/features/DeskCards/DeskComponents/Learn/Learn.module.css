@@ -1,6 +1,9 @@
 .registration {
-    width: 60%;
-    margin: 3% auto;
+    /*width: 60%;*/
+    /*margin: 3% auto;*/
+
+    display: flex;
+    justify-content: center;
 }
 
 .registrationButton {
@@ -22,8 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    width: 40%;
-    margin: 2% auto;
+    width: 450px;
 }
 
 .registrationPaperContainer {

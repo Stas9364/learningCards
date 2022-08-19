@@ -14,7 +14,7 @@ export const SortCell: React.FC<SortCellPropsType> = ({
                                                           action,
                                                           sortType,
                                                           dirValue
-}) => {
+                                                      }) => {
     const dispatch = useAppDispatch();
 
     const onSendSortValue = (name: string) => {
@@ -47,16 +47,16 @@ export const SortCell: React.FC<SortCellPropsType> = ({
     return (
         <>
             {
-                   name === 'Cards'
+                name === 'Cards'
                 || name === 'Last Update'
                 || name === 'Last Cards Updated'
                 || name === 'Grade'
-                ? <TableSortLabel
-                    onClick={() => onSendSortValue(name)}
-                    style={{color: 'white'}}
-                    direction={dirValue ? 'desc' : 'asc'}
-                >{name}</TableSortLabel>
-                : <>{name}</>}
+                    ? <TableSortLabel
+                        onClick={() => onSendSortValue(name)}
+                        style={{color: 'white'}}
+                        direction={dirValue ? 'desc' : 'asc'}
+                    >{name}</TableSortLabel>
+                    : <>{name}</>}
         </>
     )
 }

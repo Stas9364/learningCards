@@ -9,7 +9,7 @@ import {setParamsAC} from "../../paramsReducer/paramsReducer";
 import {BasicTableHead} from "./BasicTableHead";
 import {BasicTableBody} from "./BasicTableBody";
 import style from '../BasicTable/BasicTable.module.css'
-import {allPacks} from "../../packsReducer/selectors";
+import {allPacks} from '../../packsReducer/selectors';
 
 
 export const BasicTable = React.memo(() => {

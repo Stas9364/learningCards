@@ -97,7 +97,9 @@ export const Learn = () => {
 
     return (
 
-        <div className={style.registration}>
+        <div
+            //className={style.registration}
+        >
             <Button
                 onClick={backTo}
                 className={style.registrationButton}
@@ -107,7 +109,7 @@ export const Learn = () => {
             </Button>
 
             <h1 className={style.registrationCardName}>Learn : {packName}</h1>
-
+            <div className={style.registration}>
             <Paper
                 className={style.registrationPaper}
                 elevation={2}
@@ -159,7 +161,7 @@ export const Learn = () => {
                 </div>
 
             </Paper>
-
+            </div>
         </div>
     );
 };

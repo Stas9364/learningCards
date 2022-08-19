@@ -55,4 +55,6 @@
     display: block;
     white-space: nowrap;
     overflow: hidden;
+    /*width: 100px;*/
+    /*text-align: center;*/
 }

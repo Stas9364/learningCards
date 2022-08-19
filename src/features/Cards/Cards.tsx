@@ -20,9 +20,10 @@ export const Cards = () => {
     const isLogin = useAppSelector(authState.isLogin);
     const question = useAppSelector(cardParams.cardQuestion);
     const sortCards = useAppSelector(cardParams.sortCards);
+    const user_ID = useAppSelector(authState.id);
 
     const {id} = useParams<{ id: string }>(); //вытаскивает айдишку из урла
-    const packName = useLocation().state as string;
+    const {packName, userId} = useLocation().state as {packName: string, userId: string};
 
     useEffect(() => {
         if (id) {
@@ -88,7 +89,7 @@ export const Cards = () => {
                         />
                     </div>
 
-                    <div>
+                    <div style={{width: '30%'}}>
                         <Button
                             onClick={studyHandler}
                             type='submit'
@@ -103,14 +104,13 @@ export const Cards = () => {
                         </Button>
                     </div>
 
-                    <div>
-                        {/*<AddNewCard packID={id}/>*/}
+                    {user_ID === userId && <div >
                         <AddUpdateCard
                             packId={id}
                             buttonName={'Add card'}
                             onSave={onSave}
                         />
-                    </div>
+                    </div>}
                 </div>
 
                 <CardsTable packID={id}/>
