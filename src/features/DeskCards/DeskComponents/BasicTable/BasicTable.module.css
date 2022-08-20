@@ -49,12 +49,16 @@
     width: 100px;
     height: 100px;
 }
+.deckCover:hover {
+    border: 1px solid #1C72B9FF;
+}
 
 .textPackName {
     text-overflow: ellipsis;
     display: block;
     white-space: nowrap;
     overflow: hidden;
-    /*width: 100px;*/
-    /*text-align: center;*/
+}
+.textPackName:hover {
+   font-weight: bolder;
 }

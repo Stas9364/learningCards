@@ -13,7 +13,7 @@ export const UniButton = React.memo (() => {
     const isMy = useAppSelector(params.isMy);
 
     const getMyPacks = () => {
-        dispatch(setParamsAC({user_id: userId, nameOfButton: 'MY', page: 1}));
+        dispatch(setParamsAC({user_id: userId, nameOfButton: 'MY', page: 0}));
     };
 
     const getAllPacks = () => {
