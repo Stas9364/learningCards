@@ -1,13 +1,12 @@
 import React, {useCallback} from 'react';
 import style from '../auth/Registration/Registration.module.css'
-import {useAppDispatch, useAppSelector} from '../../common/utils/hooks';
-import {EditableSpan} from '../../common/components/EditableSpan/EditableSpan';
+import {useAppDispatch, useAppSelector} from '../../common/utils';
 import {Navigate} from 'react-router-dom';
 import {Button, Paper} from '@mui/material';
 import {logOutTC, updateMeTC} from '../auth/authReducer';
-import pen from '../../assets/img/pen.svg';
-import {authState} from '../auth/selectors';
-import {DownloadAvatar} from '../../common/components/Avatar/DownloadAvatar';
+import {pen} from '../../assets';
+import {DownloadAvatar, EditableSpan} from '../../common/components';
+import {authState} from '../auth';
 
 
 export const ProfilePage = React.memo(() => {

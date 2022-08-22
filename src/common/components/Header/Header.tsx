@@ -1,10 +1,9 @@
 import React from 'react';
 import style from './Header.module.css'
-import {useAppSelector} from '../../utils/hooks';
-import {BadgeAvatars} from '../Avatar/BadgeAvatar';
-import oldCar from '../../../assets/img/oldCar.svg';
-import logo from '../../../assets/img/logo.png'
-import {authState} from '../../../features/auth/selectors';
+import {BadgeAvatar} from '../Avatar/BadgeAvatar';
+import {oldCar, logo} from '../../../assets/index';
+import {authState} from '../../../features/auth';
+import {useAppSelector} from '../../utils';
 
 export const Header = React.memo(() => {
     const isLogin = useAppSelector(authState.isLogin);
@@ -22,7 +21,7 @@ export const Header = React.memo(() => {
     return (
         <div className={style.header}>
             <div className={style.logo}><img src={logo} alt='logo'/></div>
-            <BadgeAvatars/>
+            <BadgeAvatar/>
         </div>
     )
 });

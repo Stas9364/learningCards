@@ -1,6 +1,6 @@
-import {useAppDispatch, useDebounce} from '../../utils/hooks';
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import style1 from '../SearchInput/SearchInput.module.css'
+import {useAppDispatch, useDebounce} from '../../utils';
 
 type SearchInputPropsType = {
     style?: any

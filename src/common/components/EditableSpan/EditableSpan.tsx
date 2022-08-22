@@ -1,6 +1,5 @@
 import React, {ChangeEvent, useState} from 'react';
 import {TextField} from "@mui/material";
-import pen from '../../../assets/img/pen.svg'
 
 type EditableSpanType = {
     title: string
@@ -29,11 +28,8 @@ export const EditableSpan = React.memo((props: EditableSpanType) => {
                 type='text'
                 margin="normal"
             /> :
-            // <input onChange={changeTextFromEnter}
-            //        autoFocus onBlur={activateViewMode} value={newText}/> :
             <div style={{display: 'flex', alignItems: 'center'}}>
                 <h2 style={{marginLeft: '5px'}} onDoubleClick={changeTextDoubleClick}>{props.title} </h2>
-                {/*<div style={{opacity: '0.5', marginLeft: '5px'}}><img src={pen} alt=""/></div>*/}
             </div>
 
     )

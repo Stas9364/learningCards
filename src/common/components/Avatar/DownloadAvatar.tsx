@@ -1,13 +1,12 @@
-import {useAppDispatch, useAppSelector} from '../../utils/hooks';
 import React, {ChangeEvent, useEffect, useState} from 'react';
-import {authState} from '../../../features/auth/selectors';
 import {errorAC, updateMeTC} from '../../../features/auth/authReducer';
-import {uploadHandler} from '../../utils/uploadHandler';
 import style from '../../../features/auth/Registration/Registration.module.css';
-import defAva from '../../../assets/img/defAva.png';
+import {defAva} from '../../../assets/index';
 import {IconButton} from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import {CustomizedSnackbars} from '../ErrorSnackbar/Snackbar';
+import {CustomizedSnackbar} from '../ErrorSnackbar/Snackbar';
+import {uploadHandler, useAppDispatch, useAppSelector} from '../../utils';
+import {authState} from '../../../features/auth';
 
 export const DownloadAvatar = () => {
     const dispatch = useAppDispatch();
@@ -60,7 +59,7 @@ export const DownloadAvatar = () => {
                 </IconButton>
             </label>
 
-            <CustomizedSnackbars errors={error}/>
+            <CustomizedSnackbar errors={error}/>
         </>
 
     )

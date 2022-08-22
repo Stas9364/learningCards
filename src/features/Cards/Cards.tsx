@@ -2,16 +2,16 @@ import React, {useEffect} from 'react';
 import style from './Cards.module.css'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {Link, Navigate, useLocation, useNavigate, useParams} from 'react-router-dom';
-import {useAppDispatch, useAppSelector} from '../../common/utils/hooks';
+import {useAppDispatch, useAppSelector} from '../../common/utils';
 import {setCardsParamsAC, setCardsParamsTC} from './paramsCardsReducer/paramsCardsReducer';
-import {SearchInput} from '../../common/components/SearchInput/SearchInput';
 import styleD from '../DeskCards/DeskCards.module.css'
 import {Button} from '@mui/material';
 import {cardParams} from './paramsCardsReducer/selectors';
-import {authState} from '../auth/selectors';
 import {CardsTable} from './CardsTable/CardsTable';
 import {createCardTC} from './cardsReducer/cardsReducer';
 import {AddUpdateCard, OnSavePayloadType} from './EditCardsComponents/AddUpdateCard';
+import {authState} from '../auth';
+import {SearchInput} from '../../common/components';
 
 export const Cards = () => {
     const dispatch = useAppDispatch();

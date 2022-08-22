@@ -3,11 +3,10 @@ import {Button, Checkbox, FormControl, FormControlLabel, Input, InputLabel, Pape
 import {SubmitHandler, useForm} from 'react-hook-form';
 import {setLoginData} from '../authReducer';
 import {Navigate, NavLink} from 'react-router-dom';
-import {useAppDispatch, useAppSelector} from '../../../common/utils/hooks';
 import style from '../Registration/Registration.module.css';
-import {EndAdornment} from '../../../common/components/EndAdornment/EndAdornment';
-import {CustomizedSnackbars} from '../../../common/components/ErrorSnackbar/Snackbar';
 import {authState} from '../selectors';
+import {useAppDispatch, useAppSelector} from '../../../common/utils';
+import {CustomizedSnackbar, EndAdornment} from '../../../common/components';
 
 type Inputs = {
     email: string
@@ -127,7 +126,7 @@ export const Login = React.memo ( () => {
                     </NavLink>
                 </div>
             </Paper>
-            <CustomizedSnackbars errors={error}/>
+            <CustomizedSnackbar errors={error}/>
         </div>
     );
 } );

@@ -1,17 +1,14 @@
 import React from 'react';
 import {Navigate, Route, Routes} from 'react-router-dom';
-import {ProfilePage} from '../../../features/Profile/ProfilePage';
-import {Registration} from "../../../features/auth/Registration/Registration";
-import {CreatePasswordPage} from '../../../features/ChangePassword/CreatePasswordPage';
-import {ForgotPasswordPage} from '../../../features/ChangePassword/ForgotPasswordPage';
-import {Login} from '../../../features/auth/Login/Login';
 import {Error404} from '../ErrorPage/Error404';
-import {Cards} from '../../../features/Cards/Cards';
-import {DeskCards} from '../../../features/DeskCards/DeskCards';
-import {useAppSelector} from '../../utils/hooks';
 import {Preloader} from '../Preloader/mainPreloader/Preloader';
 import {initApp} from '../../../app/selectors';
-import {Learn} from "../../../features/DeskCards/DeskComponents/Learn/Learn";
+import {Login, Registration} from '../../../features/auth';
+import {ProfilePage} from '../../../features/Profile';
+import {useAppSelector} from '../../utils';
+import {CreatePasswordPage, ForgotPasswordPage} from '../../../features/ChangePassword';
+import {DeskCards, Learn} from '../../../features/DeskCards';
+import {Cards} from '../../../features/Cards';
 
 
 export const PATH = {

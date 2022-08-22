@@ -1,24 +1,15 @@
-import {useAppDispatch, useAppSelector} from '../../../../common/utils/hooks';
+import {updatedDate, useAppDispatch, useAppSelector} from '../../../../common/utils';
 import {useNavigate} from 'react-router-dom';
-import {authState} from '../../../auth/selectors';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableRow from '@mui/material/TableRow';
-import TableCell from '@mui/material/TableCell';
 import {PATH} from '../../../../common/components/routes/RoutesComponent';
-import {updatedDate} from '../../../../common/utils/dateFormatting';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import {DeletePackCardComponent} from '../../../../common/components/DeletePackCardComponent/DeletePackCardComponent';
-import {Button} from '@mui/material';
-import study from '../../../../assets/img/school.svg';
+import {Button, ButtonGroup, Table, TableBody, TableCell, TableRow} from '@mui/material';
+import {study} from '../../../../assets';
 import * as React from 'react';
 import {deletePackTC, updatePackTC} from '../../packsReducer/packsReducer';
 import {allPacks} from '../../packsReducer/selectors';
 import style from '../../DeskComponents/BasicTable/BasicTable.module.css'
-import {
-    AddUpdatePackComponent,
-    OnSaveArgsType
-} from '../EditPacksComponents/AddUpdatePackComponent';
+import {AddUpdatePackComponent, OnSaveArgsType} from '../../../DeskCards';
+import {authState} from '../../../auth';
+import {DeletePackCardComponent} from '../../../../common/components';
 
 export const BasicTableBody = () => {
     const dispatch = useAppDispatch();
