@@ -4,11 +4,10 @@ import {RegistrationTypes} from './RegistrationTypes';
 import {Button, FormControl, Input, InputLabel, Paper, TextField} from '@mui/material';
 import style from './Registration.module.css'
 import {Link, Navigate} from 'react-router-dom';
-import {useAppDispatch, useAppSelector} from '../../../common/utils/hooks';
-import {EndAdornment} from '../../../common/components/EndAdornment/EndAdornment';
 import {setRegistrationDataTC} from '../authReducer';
-import {CustomizedSnackbars} from '../../../common/components/ErrorSnackbar/Snackbar';
 import {authState} from '../selectors';
+import {useAppDispatch, useAppSelector} from '../../../common/utils';
+import {CustomizedSnackbar, EndAdornment} from '../../../common/components';
 
 export const Registration = React.memo ( () => {
     const dispatch = useAppDispatch();
@@ -130,7 +129,7 @@ export const Registration = React.memo ( () => {
                 </div>
             </Paper>
 
-            <CustomizedSnackbars errors={error}/>
+            <CustomizedSnackbar errors={error}/>
 
         </div>
     )

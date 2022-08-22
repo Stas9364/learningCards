@@ -2,12 +2,12 @@ import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import style from '../Header/Header.module.css'
-import {useAppSelector} from '../../utils/hooks';
-import {authState} from '../../../features/auth/selectors';
-import {AvatarButton} from '../Header/AvatarButton';
-import defAva from '../../../assets/img/defAva.png'
+import {AvatarButton} from './AvatarButton';
+import {defAva} from '../../../assets/index'
+import {authState} from '../../../features/auth';
+import {useAppSelector} from '../../utils';
 
-export const BadgeAvatars = () => {
+export const BadgeAvatar = () => {
     const state = useAppSelector(authState.state);
 
     return (

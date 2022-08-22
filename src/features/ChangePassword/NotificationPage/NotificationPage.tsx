@@ -1,10 +1,10 @@
 import React from 'react';
 import {Paper} from '@mui/material';
 import style from '../../auth/Registration/Registration.module.css';
-import {useAppDispatch, useAppSelector} from '../../../common/utils/hooks';
+import {useAppDispatch, useAppSelector} from '../../../common/utils';
 import {Link} from 'react-router-dom';
 import {sendConfirmMail} from '../changePasswordReducer';
-import mail from '../../../assets/img/pen.svg';
+import {mail} from '../../../assets';
 import {passwordState} from '../selectors';
 
 

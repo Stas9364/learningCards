@@ -1,10 +1,9 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
+import {Box, Slider} from '@mui/material';
 import style from '../../../features/DeskCards/DeskCards.module.css'
-import {useAppDispatch, useAppSelector} from '../../../common/utils/hooks';
-import {params} from "../paramsReducer/selectors";
-import {setParamsAC} from "../paramsReducer/paramsReducer";
+import {useAppDispatch, useAppSelector} from '../../../common/utils';
+import {params} from '../paramsReducer/selectors';
+import {setParamsAC} from '../paramsReducer/paramsReducer';
 
 export const RangeSlider = React.memo ( () => {
     const dispatch = useAppDispatch();

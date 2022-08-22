@@ -3,10 +3,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import * as React from 'react';
-import {SortCell} from "../../../common/components/SortCell/SortCell";
-import {useAppSelector} from "../../../common/utils/hooks";
-import {setCardsParamsAC} from "../paramsCardsReducer/paramsCardsReducer";
-import {cardParams} from "../paramsCardsReducer/selectors";
+import {setCardsParamsAC} from '../paramsCardsReducer/paramsCardsReducer';
+import {cardParams} from '../paramsCardsReducer/selectors';
+import {SortCell} from '../../../common/components';
+import {useAppSelector} from '../../../common/utils';
 
 export const CardsTableHead = () => {
     const columnNames = ['Question', 'Answer', 'Last Cards Updated', 'Grade', 'Actions'];

@@ -1,6 +1,6 @@
 import React from 'react';
-import {useAppDispatch} from '../../utils/hooks';
 import TableSortLabel from '@mui/material/TableSortLabel';
+import {useAppDispatch} from '../../utils';
 
 type SortCellPropsType = {
     name: string

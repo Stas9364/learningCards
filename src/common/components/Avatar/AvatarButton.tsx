@@ -1,8 +1,8 @@
 import React, {ReactNode, useCallback} from 'react';
 import {Button, Menu, MenuItem} from '@mui/material';
 import {NavLink} from 'react-router-dom';
-import {useAppDispatch} from '../../utils/hooks';
 import {logOutTC} from '../../../features/auth/authReducer';
+import {useAppDispatch} from '../../utils';
 
 type AvatarButtonPropsType = {
     children: ReactNode

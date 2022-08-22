@@ -1,10 +1,9 @@
 import * as React from 'react';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Button from '@mui/material/Button';
-import {useAppDispatch, useAppSelector} from '../../../common/utils/hooks';
+import {ButtonGroup, Button} from '@mui/material';
+import {useAppDispatch, useAppSelector} from '../../../common/utils';
 import {setParamsAC} from '../paramsReducer/paramsReducer';
-import {authState} from '../../auth/selectors';
 import {params} from '../paramsReducer/selectors';
+import {authState} from '../../auth';
 
 export const UniButton = React.memo (() => {
     const dispatch = useAppDispatch();

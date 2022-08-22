@@ -1,8 +1,8 @@
 import React, {ChangeEvent, useState} from 'react';
 import {Button, TextField} from '@mui/material';
-import edit from '../../../assets/img/edit.svg';
-import {CustomModal} from '../../../common/components/CustomModal/CustomModal';
+import {edit} from '../../../assets/index';
 import style from '../../DeskCards/DeskComponents/EditPacksComponents/EditPacksComponents.module.css';
+import {CustomModal} from '../../../common/components';
 
 type AddUpdateCardPropsType = {
     packId: string | undefined

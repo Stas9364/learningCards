@@ -6,13 +6,12 @@ import TableCell from '@mui/material/TableCell';
 import {Rating} from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import {useAppDispatch, useAppSelector} from '../../../common/utils/hooks';
-import {authState} from '../../auth/selectors';
 import {deleteCardTC, updateCardTC} from '../cardsReducer/cardsReducer';
-import {DeletePackCardComponent} from '../../../common/components/DeletePackCardComponent/DeletePackCardComponent';
-import {updatedDate} from '../../../common/utils/dateFormatting';
 import {allCards} from '../cardsReducer/selectors';
 import {AddUpdateCard, OnSavePayloadType} from '../EditCardsComponents/AddUpdateCard';
+import {updatedDate, useAppDispatch, useAppSelector} from '../../../common/utils';
+import {authState} from '../../auth';
+import {DeletePackCardComponent} from '../../../common/components';
 
 type CardsTableBodyPropsType = {
     packID: string | undefined

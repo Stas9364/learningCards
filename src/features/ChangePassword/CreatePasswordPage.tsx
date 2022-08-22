@@ -1,12 +1,12 @@
 import React from 'react';
 import style from '../auth/Registration/Registration.module.css';
 import {Button, FormControl, InputLabel, Paper, Input} from '@mui/material';
-import {useAppDispatch, useAppSelector} from '../../common/utils/hooks';
+import {useAppDispatch, useAppSelector} from '../../common/utils';
 import {SubmitHandler, useForm} from 'react-hook-form';
 import {Navigate, useLocation} from 'react-router-dom';
 import {sendNewPass} from './changePasswordReducer';
-import {EndAdornment} from '../../common/components/EndAdornment/EndAdornment';
 import {passwordState} from './selectors';
+import {EndAdornment} from '../../common/components';
 
 type PasswordField = {
     password: string

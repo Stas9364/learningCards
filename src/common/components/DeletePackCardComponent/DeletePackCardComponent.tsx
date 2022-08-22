@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button} from '@mui/material';
-import del from '../../../assets/img/delete.svg';
+import {deletePick} from '../../../assets/index';
 import style from '../../../features/DeskCards/DeskComponents/EditPacksComponents/EditPacksComponents.module.css';
 import {CustomModal} from '../CustomModal/CustomModal';
 
@@ -24,7 +24,7 @@ export const DeletePackCardComponent: React.FC<DeletePackPropsType> = ({name, mo
     return (
         <div>
             <Button onClick={openModal}>
-                <img src={del} alt="delete"/>
+                <img src={deletePick} alt="delete"/>
             </Button>
 
             <CustomModal open={open} setOpen={setOpen}>

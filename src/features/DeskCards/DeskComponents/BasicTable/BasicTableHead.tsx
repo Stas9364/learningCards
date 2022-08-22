@@ -1,12 +1,9 @@
-import {useAppSelector} from '../../../../common/utils/hooks';
-import Table from '@mui/material/Table';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import TableCell from '@mui/material/TableCell';
-import {SortCell} from '../../../../common/components/SortCell/SortCell';
+import {useAppSelector} from '../../../../common/utils';
+import {Table, TableHead, TableRow, TableCell} from '@mui/material';
 import * as React from 'react';
-import {params} from "../../paramsReducer/selectors";
-import {setParamsAC} from "../../paramsReducer/paramsReducer";
+import {params} from '../../paramsReducer/selectors';
+import {setParamsAC} from '../../paramsReducer/paramsReducer';
+import {SortCell} from '../../../../common/components';
 
 export const BasicTableHead = () => {
     const columnNames = ['Name', 'Cards', 'Last Update', 'Author', 'Actions'];

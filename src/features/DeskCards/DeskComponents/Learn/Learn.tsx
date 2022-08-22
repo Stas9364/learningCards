@@ -2,14 +2,14 @@ import React, {useEffect, useState} from 'react';
 import style from './Learn.module.css';
 import {Button, Paper} from '@mui/material';
 import {Navigate, useLocation, useNavigate} from 'react-router-dom';
-import {useAppDispatch, useAppSelector} from "../../../../common/utils/hooks";
-import {authState} from "../../../auth/selectors";
-import {CardType} from "../../../../api/cardsDeskAPI";
-import SuperRadio from "../../../../common/components/superComponents/SuperRadio";
-import {changeCardGradeTC} from "../../../Cards/cardsReducer/cardsReducer";
-import {setCardsParamsTC} from "../../../Cards/paramsCardsReducer/paramsCardsReducer";
-import {allCards} from "../../../Cards/cardsReducer/selectors";
-import back from '../../../../assets/img/arrowBack.svg'
+import {useAppDispatch, useAppSelector} from '../../../../common/utils';
+import {CardType} from '../../../../api/cardsDeskAPI';
+import SuperRadio from '../../../../common/components/superComponents/SuperRadio';
+import {changeCardGradeTC} from '../../../Cards/cardsReducer/cardsReducer';
+import {setCardsParamsTC} from '../../../Cards/paramsCardsReducer/paramsCardsReducer';
+import {arrowBack} from '../../../../assets'
+import {authState} from '../../../auth';
+import {allCards} from '../../../Cards';
 
 const options = ['Did not know', 'Forgot', 'A lot of thought', 'Confused', 'Knew the answer'];
 
@@ -104,7 +104,7 @@ export const Learn = () => {
                 onClick={backTo}
                 className={style.registrationButton}
             >
-                <img className={style.arrow} src={back} alt="arrow"/>
+                <img className={style.arrow} src={arrowBack} alt="arrow"/>
                 Back
             </Button>
 

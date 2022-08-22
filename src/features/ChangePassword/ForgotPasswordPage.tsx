@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Paper, TextField} from '@mui/material';
 import {Link} from 'react-router-dom';
 import {SubmitHandler, useForm} from 'react-hook-form';
-import {useAppDispatch, useAppSelector} from '../../common/utils/hooks';
+import {useAppDispatch, useAppSelector} from '../../common/utils';
 import {Notification} from './NotificationPage/NotificationPage';
 import style from '../auth/Registration/Registration.module.css'
 import {mailToRecover} from './changePasswordReducer';

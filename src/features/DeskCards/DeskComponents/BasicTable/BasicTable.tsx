@@ -1,15 +1,14 @@
 import * as React from 'react';
 import TablePagination from "@mui/material/TablePagination";
-import {useAppDispatch, useAppSelector} from '../../../../common/utils/hooks';
-import {WithoutResultPage} from '../../../../common/components/WithoutResultsPage/WithoutResultPage';
+import {useAppDispatch, useAppSelector} from '../../../../common/utils';
 import {initApp} from '../../../../app/selectors';
-import {SecondaryPreloader} from '../../../../common/components/Preloader/secondaryPreloader/SecondaryPreloader';
 import {params} from '../../paramsReducer/selectors';
-import {setParamsAC} from "../../paramsReducer/paramsReducer";
-import {BasicTableHead} from "./BasicTableHead";
-import {BasicTableBody} from "./BasicTableBody";
+import {setParamsAC} from '../../paramsReducer/paramsReducer';
+import {BasicTableHead} from './BasicTableHead';
+import {BasicTableBody} from './BasicTableBody';
 import style from '../BasicTable/BasicTable.module.css'
 import {allPacks} from '../../packsReducer/selectors';
+import {SecondaryPreloader, WithoutResultPage} from '../../../../common/components';
 
 
 export const BasicTable = React.memo(() => {

@@ -1,19 +1,13 @@
 import React, {useEffect} from 'react';
 import style from './DeskCards.module.css';
-import {UniButton} from './DeskComponents/UniButton';
-import {RangeSlider} from './DeskComponents/RangeSlider';
-import {BasicTable} from './DeskComponents/BasicTable/BasicTable';
-import {useAppDispatch, useAppSelector} from '../../common/utils/hooks';
+import {useAppDispatch, useAppSelector} from '../../common/utils';
 import {Navigate} from 'react-router-dom';
-import {authState} from '../auth/selectors';
-import {SearchInput} from '../../common/components/SearchInput/SearchInput';
-import {setParamsAC, setParamsTC} from "./paramsReducer/paramsReducer";
-import {params} from "./paramsReducer/selectors";
-import {createPackTC} from "./packsReducer/packsReducer";
-import {
-    AddUpdatePackComponent,
-    OnSaveArgsType
-} from './DeskComponents/EditPacksComponents/AddUpdatePackComponent';
+import {setParamsAC, setParamsTC} from './paramsReducer/paramsReducer';
+import {params} from './paramsReducer/selectors';
+import {createPackTC} from './packsReducer/packsReducer';
+import {authState} from '../auth';
+import {SearchInput} from '../../common/components';
+import {AddUpdatePackComponent, OnSaveArgsType, UniButton, RangeSlider, BasicTable} from '../DeskCards';
 
 export const DeskCards = React.memo(() => {
     const dispatch = useAppDispatch();

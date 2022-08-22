@@ -2,7 +2,7 @@ import React from 'react';
 import {AlertProps, Snackbar} from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 import {errorAC} from '../../../features/auth/authReducer';
-import {useAppDispatch} from "../../utils/hooks";
+import {useAppDispatch} from '../../utils';
 
 export type CustomizedSnackbarsType = {
     errors: string | null
@@ -15,7 +15,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export const CustomizedSnackbars: React.FC<CustomizedSnackbarsType> = React.memo ( ({errors}) => {
+export const CustomizedSnackbar: React.FC<CustomizedSnackbarsType> = React.memo ( ({errors}) => {
     const dispatch = useAppDispatch();
 
     const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
