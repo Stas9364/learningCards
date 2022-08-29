@@ -1,7 +1,7 @@
 import {AppThunk} from '../../../reduxStore/reduxStore';
 import {PackPayloadType, packsAPI, ResponseType} from '../../../api/cardsDeskAPI';
 import {initTable} from '../../../app/appReducer';
-import {handlerError} from '../../../common/utils/handlerError';
+import {handlerError} from '../../../common/utils';
 import {setParamsTC} from "../paramsReducer/paramsReducer";
 
 export enum PACK_TYPE {

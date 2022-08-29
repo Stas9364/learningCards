@@ -5,7 +5,7 @@ import {
     RequestPayloadCardType
 } from '../../../api/cardsDeskAPI';
 import {setCardsParamsTC} from '../paramsCardsReducer/paramsCardsReducer';
-import {handlerError} from '../../../common/utils/handlerError';
+import {handlerError} from '../../../common/utils';
 
 export enum CARD_TYPE {
     GET_CARDS = 'GET_CARDS',

@@ -1,6 +1,6 @@
 import {AppThunk} from '../../reduxStore/reduxStore';
 import {initializedSuccess} from '../../app/appReducer';
-import {handlerError} from '../../common/utils/handlerError';
+import {handlerError} from '../../common/utils';
 import {PayLoadType, profileAPI, registrationAPI} from '../../api/profileAPI';
 
 export enum AUTH_TYPE {
