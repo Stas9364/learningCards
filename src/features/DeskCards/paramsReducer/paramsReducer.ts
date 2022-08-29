@@ -1,6 +1,6 @@
 import {packsAPI, RequestPayloadType} from '../../../api/cardsDeskAPI';
 import {AppThunk} from '../../../reduxStore/reduxStore';
-import {handlerError} from '../../../common/utils/handlerError';
+import {handlerError} from '../../../common/utils';
 import {initTable} from '../../../app/appReducer';
 import {getPackAC} from "../packsReducer/packsReducer";
 
